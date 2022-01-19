@@ -1,4 +1,4 @@
-export{getAllServers, getAllHackableServers, getServersToHack, canHack, nukeAll};
+export{getAllServers, getAllHackableServers, getServersToHack, canHack, nukeAll, scpAll};
 
 /** @param {NS} ns **/
 function getAllServers(ns){
@@ -37,5 +37,12 @@ function getServersToHack(ns){
 function nukeAll(ns){
 	for(let s of getServersToHack(ns)){
 		ns.nuke(s);
+	}
+}
+
+/** @param {NS} ns **/
+async function scpAll(ns, files, src = 'home'){
+	for(let s of getAllHackableServers(ns).filter(e => e != src)){
+		await ns.scp(files, src, s);
 	}
 }
