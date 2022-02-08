@@ -32,4 +32,5 @@ export async function main(ns) {
 	for(let s of scripts){
 		await ns.wget(`${url}${s}`, `/${s}`, 'home');
 	}
+	ns.print('Test successful!');
 }
