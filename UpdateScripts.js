@@ -30,6 +30,6 @@ export async function main(ns) {
 		'Servers.js'
 	];
 	for(let s of scripts){
-		await ns.wget(`${url}${s}`, s, 'home');
+		await ns.wget(`${url}${s}`, `/${s}`, 'home');
 	}
 }
