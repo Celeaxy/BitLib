@@ -11,5 +11,5 @@ export async function main(ns) {
 
 /** @param {NS} ns **/
 async function deployScripts(ns) {
-	await scpAll(ns, ['lib.js', 'Hack.js', 'Grow.js', 'Weaken.js']);
+	await scpAll(ns, ['lib.js', 'HGW/Hack.js', 'HGW/Grow.js', 'HGW/Weaken.js']);
 }
